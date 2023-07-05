@@ -3,12 +3,11 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Icon } from 'react-native-elements'
 
-import Transporte from '../screens/Transporte'
-import IniciarTransporte from '../screens/IniciarTransporte'
-import GastosyObservaciones from '../screens/GastosyObservaciones'
-import Listado from '../screens/Listado'
-import FinalizarTransporte from '../screens/FinalizarTransporte'
-
+import TransporteStack from './TransporteStack'
+import ListadoStack from './ListadoStack'
+import GastosyObservacionesStack from './GastosyObservacionesStack'
+import FinalizarTransporteStack from './FinalizarTransporteStack'
+import IniciarTransporteStack from './IniciarTransporteStack'
 
 const Tab = createBottomTabNavigator()
 
@@ -56,27 +55,27 @@ export default function Navegacion() {
         >
             <Tab.Screen
                 name="transporte"
-                component={Transporte}
+                component={TransporteStack}
                 options={{title: "Inicio"}}
             />
             <Tab.Screen
                 name="iniciarTransporte"
-                component={IniciarTransporte}
+                component={IniciarTransporteStack}
                 options={{title: "Iniciar Transporte"}}
             />
              <Tab.Screen
                 name="finalizarTransporte"
-                component={FinalizarTransporte}
+                component={FinalizarTransporteStack}
                 options={{title: "Finalizar Transporte"}}
             />
             <Tab.Screen
                 name="gastosyObserbaciones"
-                component={GastosyObservaciones}
+                component={GastosyObservacionesStack}
                 options={{title: "Gastos y Obserbaciones"}}
             />
             <Tab.Screen
                 name="listado"
-                component={Listado}
+                component={ListadoStack}
                 options={{title: "Viajes"}}
             />
           </Tab.Navigator>
